@@ -1,0 +1,69 @@
+emisalnya. Tombol tersebut biasanya berfungsi untuk mengirim data-data yang telah diinputkan oleh user pada form kepada proses lain, misalnya seperti mengirim data tersebut ke server untuk memperbarui data profil Anda.
+
+Tapi tahukah Anda bahwa tombol tersebut unik? Unik dalam arti tombol pada form tidak dibuat melalui tag <button> (secara default bertipe "button") yang selama ini kita gunakan, melainkan sebuah tag khusus yakni <input> yang memiliki atribut type bernilai “submit”. Selain menggunakan tag <input>, kita juga bisa menggunakan tag <button> yang memiliki atribut type bernilai "submit", bukan "button".
+
+Mungkin Anda berpikir bahwa untuk mengendalikan ter-submitnya form ke server perlu memberikan event submit pada tombol submit. Tentu tidak, kita akan memberikannya pada elemen <form> (jika menggunakan method addEventListener).
+
+
+
+Event onSubmit
+Baik, cukup dengan teori, bagaimana jika lanjut melalui praktik saja? Pertama mari kita buat sebuah berkas HTML.
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form World</title>
+  <style>
+    .contents {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid black;
+      padding : 15px;
+    }
+    
+    .form-element {
+      margin: 8px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+<div class="contents">
+  <h2 align="center">Isi data diri</h2>
+  <div class="formContent">
+    <form id="formDataDiri">
+      <div class="form-element">
+        <label for="inputNama">Nama:</label><br>
+        <input type="text" id="inputNama" name="nama" placeholder="Nama Anda" required><br>
+      </div>
+      <div class="form-element">
+        <label for="inputDomisili">Domisili:</label><br>
+        <input type="text" id="inputDomisili" name="domisili" placeholder="Domisili Anda" required><br>
+      </div>
+      <div class="form-element">
+        <input type="submit" value="Submit Data">
+      </div>
+    </form>
+  </div>
+  <h3 id="messageAfterSubmit"></h3>
+</div>
+ 
+<script>
+  // masukkan kodemu di sini
+
+const submitAction = document.getElementById('formDataDiri');
+ 
+submitAction.addEventListener('submit', function (event) {
+  const inputNama = document.getElementById('inputNama').value;
+  const inputDomisili = document.getElementById('inputDomisili').value;
+  const hiddenMessage = 'Halo ' + inputNama + ', bagaimana cuacanya di ' + inputDomisili + '?';
+ 
+  document.getElementById('messageAfterSubmit').innerText = hiddenMessage;
+  event.preventDefault();
+});
+
+</script>
+</body>
+</html>
