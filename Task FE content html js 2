@@ -1,0 +1,65 @@
+20210426224851517ff6721be4e04dc3f84612e4ba1d07.jpeg
+dicoding.innerText = 'Belajar Programming di Dicoding';
+202104262251378be04ef7cefa660cf32bc0aa5d9ef523.gif
+
+Keren, bukan? Tampilan tulisannya sudah bisa berubah. Silakan Anda terapkan hal di atas untuk pranala Google, di mana pesan pada pranalanya diubah menjadi "Mencari sesuatu di Google". Ingat, nilai id pada pranala Google adalah "googleLink".
+
+
+
+Manipulasi Konten dengan innerHTML
+Kita sudah mengetahui bahwa innerHTML mengembalikan konten sebuah elemen beserta tag HTML-nya. Apakah Anda bisa menebak apa kegunaan fungsionalitas ini? Kuncinya terletak pada kata tag. Sudah tahu? Betul, dengan melakukan assignment ke properti ini kita bisa menyertakan tag HTML dan merendernya dengan mudah melalui string.
+
+Sekarang kita akan berlatih memanipulasi konten dengan innerHTML. Silakan siapkan kembali dokumen HTML berikut ini.
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to Cube World!</title>
+  <style>
+    button {
+      width: 200px;
+      font-size: 15px;
+      margin: 8px;
+      padding: 3px;
+    }
+    
+    #main {
+      margin: 2px;
+    }
+  </style>
+</head>
+<body>
+<div id="main" align="center">
+  <h2>Its Cube Time!</h2>
+  <img id="gambar"
+       src="https://raw.githubusercontent.com/dicodingacademy/a315-web-pemula-labs/shared-files/homepage-dicoding-challenge-illustration.png"
+       alt="Its a rubiks cube!" width="300" height="215">
+  <p id="caption"><b>Sudah siap untuk memecahkan teka-teki permainan tersebut?</b></p>
+  <div class="button-group">
+    <div class="button">
+      <button>Sejarah</button>
+    </div>
+    <div class="button">
+      <button>Permainan</button>
+    </div>
+    <div class="button">
+      <button><i>Fun Fact</i></button>
+    </div>
+    <div class="button">
+      <button disabled="disabled">Play (Coming Soon)</button>
+    </div>
+    <div class="button">
+      <button>Exit</button>
+    </div>
+  </div>
+</div>
+<hr size="2" width="95%" color="black">
+<div id="links">
+  <p>Situs lainnya yang tidak kalah menarik:</p>
+  <ul>
+    <li><a href="http://www.dicoding.com" id="dicodingLink">Dicoding</a></li>
+    <li><a href="http://www.google.com" id="googleLink">Google</a></li>
+  </ul>
+</div>
+</body>
+</html>
